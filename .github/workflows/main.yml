@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>اختر الصندوق الفائز</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      display: inline-block;
+      cursor: pointer;
+    }
+    #box1 { background-color: red; }
+    #box2 { background-color: green; }
+    #box3 { background-color: blue; }
+  </style>
+  <script>
+    function checkWinner(selectedBox) {
+      var winningBox = 'box' + Math.floor(Math.random() * 3 + 1);
+      if (selectedBox === winningBox) {
+        alert('تهانينا! لقد اخترت الصندوق الفائز!');
+      } else {
+        alert('أوه، حاول مرة أخرى!');
+      }
+    }
+
+    function startGame() {
+      var name = prompt('مرحبا انا amine ما اسمك؟');
+      var age = prompt('كم عمرك؟');
+      if (age >= 18) {
+        alert('مرحبًا ' + name + ', يمكنك البدء في اللعب!');
+      } else {
+        alert('عذرًا، سيف فحالك. يجب أن يكون عمرك 18 عامًا أو أكثر للعب.');
+      }
+    }
+  </script>
+</head>
+<body onload="startGame()">
+  <h1>اختر الصندوق الفائز</h1>
+  <div id="box1" class="box" onclick="checkWinner('box1')"></div>
+  <div id="box2" class="box" onclick="checkWinner('box2')"></div>
+  <div id="box3" class="box" onclick="checkWinner('box3')"></div>
+</body>
+</html>
